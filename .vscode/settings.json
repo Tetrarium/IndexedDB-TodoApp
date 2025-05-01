@@ -1,0 +1,47 @@
+{
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "[glsl]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "[svelte]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[sass]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+}

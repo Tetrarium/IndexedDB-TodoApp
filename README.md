@@ -12,3 +12,5 @@ cd IndexedDB-TodoApp
 npm install
 npm run dev
 ```
+
+## [Ссылка на деплой](https://indexed-db-todo-app.vercel.app/)

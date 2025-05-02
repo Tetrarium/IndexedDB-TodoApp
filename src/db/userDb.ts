@@ -9,9 +9,13 @@ export function openUserDb(): Promise<IDBDatabase> {
       const db = request.result;
 
       if (!db.objectStoreNames.contains(USER_STORE)) {
-        db.createObjectStore(USER_STORE, {
+        const objectStore = db.createObjectStore(USER_STORE, {
           keyPath: 'id',
           autoIncrement: true,
+        });
+
+        objectStore.createIndex("name", 'name', {
+          unique: true,
         });
       }
     };
@@ -32,14 +36,19 @@ export async function addUser(user: AddUserDTO) {
     const transaction = todoDB.transaction(USER_STORE, "readwrite");
 
     const users = transaction.objectStore(USER_STORE);
-    users.add(user);
+    const request = users.add(user);
 
     transaction.oncomplete = () => {
       console.log(`Пользователь ${user.name} добавлен в базу данных`);
       resolve('user added');
     };
     transaction.onerror = () => {
-      const error = new Error('Ошибка добавления пользователя');
+      let errorMessage = '';
+      if (request.error?.name === 'ConstraintError') {
+        errorMessage = 'Пользователь уже существует';
+      }
+
+      const error = new Error('Ошибка добавления пользователя: ' + errorMessage);
       console.error(error);
 
       reject(error);

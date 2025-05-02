@@ -57,7 +57,7 @@ export async function addUser(user: AddUserDTO) {
 }
 
 export async function getUserByName(name: string) {
-  const todoDB = await openUserDb();
+  // const todoDB = await openUserDb();
 
   console.log(name);
 }

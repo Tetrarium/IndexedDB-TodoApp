@@ -6,7 +6,9 @@ import s from "./mainPage.module.sass";
 
 const MainPage = () => {
   const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
+  const [password] = useState('');
+
+
 
   return (
     <div className={s.mainPage}>
@@ -15,11 +17,12 @@ const MainPage = () => {
         onClick={() => openUserDb()}
       >Создать базу данных пользователей</button>
 
-      <div>
+      <form className={s.form}>
         <input
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className={s.input}
         />
         <button
           className={s.button}
@@ -28,7 +31,7 @@ const MainPage = () => {
             password
           })}
         >Добавить пользователя</button>
-      </div>
+      </form>
 
     </div>
   );

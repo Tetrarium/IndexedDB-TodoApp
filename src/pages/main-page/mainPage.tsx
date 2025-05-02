@@ -1,11 +1,22 @@
+import { addUser, openUserDb } from "@/db/userDb";
+
 import s from "./mainPage.module.sass";
 
 const MainPage = () => {
   return (
-    <div className={s.container}>
+    <div className={s.mainPage}>
+      <button
+        className={s.button}
+        onClick={() => openUserDb()}
+      >Создать базу данных пользователей</button>
 
-      <main className={s.main}>this is the main</main>
-      <footer className={s.footer}>this is the footer</footer>
+      <button
+        className={s.button}
+        onClick={() => addUser({
+          name: 'Uasya',
+          password: '123'
+        })}
+      >Добавить пользователя</button>
     </div>
   );
 };
